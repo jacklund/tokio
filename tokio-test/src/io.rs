@@ -252,6 +252,9 @@ impl Inner {
 
                         if now < until {
                             break;
+                        } else {
+                            // Reset waiting value
+                            self.waiting = None;
                         }
                     } else {
                         self.waiting = Some(Instant::now() + *dur);
